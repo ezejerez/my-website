@@ -8,12 +8,19 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const SocialFollow = () => {
   return (
     <SocialFollowIconsContainer>
-      <SocialFollowIcon>
-        <FaLinkedin href='https://www.linkedin.com/in/ezequiel-jerez-17b6581b7' />
-      </SocialFollowIcon>
-      <SocialFollowIcon>
+      {
+        // El target "_blank" hace que se habra el link en otra pestaña
+      }
+      <a
+        href='https://www.linkedin.com/in/ezequiel-jerez-17b6581b7'
+        target='_blank'
+      >
+        <FaLinkedin />
+      </a>
+
+      <a>
         <FaGithub href='https://github.com/ezejerez' />
-      </SocialFollowIcon>
+      </a>
     </SocialFollowIconsContainer>
   );
 };
