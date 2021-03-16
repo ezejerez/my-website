@@ -1,25 +1,19 @@
 import React from 'react';
-import {
-  SocialFollowIcon,
-  SocialFollowIconsContainer,
-} from './SocialFollowElements';
+import { SocialFollowIconsContainer } from './SocialFollowElements';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const SocialFollow = () => {
   return (
     <SocialFollowIconsContainer>
-      {
-        // El target "_blank" hace que se habra el link en otra pestaña
-      }
       <a
         href='https://www.linkedin.com/in/ezequiel-jerez-17b6581b7'
         target='_blank'
-      >
+        rel='noreferrer'>
         <FaLinkedin />
       </a>
 
-      <a>
-        <FaGithub href='https://github.com/ezejerez' />
+      <a href='https://github.com/ezejerez' target='_blank' rel='noreferrer'>
+        <FaGithub />
       </a>
     </SocialFollowIconsContainer>
   );

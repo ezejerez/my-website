@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SocialFollowIconsContainer = styled.div`
-  background: gray;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,13 +8,18 @@ export const SocialFollowIconsContainer = styled.div`
 
   /* Contenedor de cada icon */
   > a {
+    @media screen and (max-width: 768px) {
+      display: block;
+      position: absolute;
+      transform: translate(-100%, 60%);
+    }
     cursor: pointer;
-    color: red;
+    color: #fff;
   }
 
-  /* Cuando pasas el mouse encima del contenedor */
   > a:hover {
-    color: blue;
+    color: #01bf71;
+    transition: 0.2s ease-in-out;
   }
 
   /* 
@@ -23,7 +27,8 @@ export const SocialFollowIconsContainer = styled.div`
     no le seteas el tamaño, se adaptan al tamaño del hijo)
   */
   > a > svg {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
   }
 `;
