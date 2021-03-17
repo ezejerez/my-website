@@ -5,6 +5,7 @@ import FirstSection from '../components/FirstSection/index';
 import AboutSection from '../components/AboutSection';
 import { SocialFollowContainer } from './PagesElements';
 import SocialFollow from '../components/SocialFollow/index';
+import ContactSection from '../components/ContactSection/index';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ const Home = () => {
       <Navbar onToggle={onToggle} />
       <FirstSection />
       <AboutSection />
+      <ContactSection />
       <SocialFollowContainer>
         <SocialFollow />
       </SocialFollowContainer>

@@ -10,6 +10,7 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
+  NavResume,
 } from './NavbarElements';
 
 const Navbar = ({ onToggle }) => {
@@ -64,7 +65,12 @@ const Navbar = ({ onToggle }) => {
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='forrecruiters'>Resume</NavLinks>
+                <NavResume
+                  href='https://docs.google.com/document/d/1ra2k-wOx_JPcdLVE1-xdGhsCQGni4p7zbTwjjW5l1NM/edit?usp=sharing'
+                  target='_blank'
+                  rel='noreferrer'>
+                  Resume
+                </NavResume>
               </NavItem>
             </NavMenu>
           </NavbarContainer>
