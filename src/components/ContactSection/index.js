@@ -19,35 +19,37 @@ const ContactSection = () => {
         'gmail',
         'template_wotpibf',
         e.target,
-        'user_8o9zQhhFpdSCF4aIT7OSF',
+        'user_8o9zQhhFpdSCF4aIT7OSF'
       )
       .then(() => {
         alert(
-          'Your message was sent successfully! I will contact you as soon as possible &#x1F60E;',
+          'Your message was sent successfully! I will contact you as soon as possible &#x1F60E;'
         );
       }, e.target.reset());
   }
 
   return (
-    <ContactSectionBackground>
-      <StyledFormWrapper>
-        <StyledForm>
-          <h2>Contact me:</h2>
-          <label htmlFor='name'>Name</label>
-          <StyledInput type='text' name='name' />
-          <label htmlFor='email'>Your Email</label>
-          <StyledInput type='email' name='email' />
-          <label htmlFor='subject'>Subject</label>
-          <StyledInput type='subject' name='subject' />
-          <label htmlFor='message'></label>
-          <StyledTextArea name='subject' />
-          <StyledError>
-            <p>Error message here</p>
-          </StyledError>
-          <StyledButton type='submit'>Send Message</StyledButton>
-        </StyledForm>
-      </StyledFormWrapper>
-    </ContactSectionBackground>
+    <div id='contact'>
+      <ContactSectionBackground>
+        <StyledFormWrapper>
+          <StyledForm>
+            <h2>Contact me:</h2>
+            <label htmlFor='name'>Name</label>
+            <StyledInput type='text' name='name' />
+            <label htmlFor='email'>Your Email</label>
+            <StyledInput type='email' name='email' />
+            <label htmlFor='subject'>Subject</label>
+            <StyledInput type='subject' name='subject' />
+            <label htmlFor='message'></label>
+            <StyledTextArea name='subject' />
+            <StyledError>
+              <p>Error message here</p>
+            </StyledError>
+            <StyledButton type='submit'>Send Message</StyledButton>
+          </StyledForm>
+        </StyledFormWrapper>
+      </ContactSectionBackground>
+    </div>
   );
 };
 
