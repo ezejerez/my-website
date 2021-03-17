@@ -2,9 +2,12 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 import {
   ContactSectionBackground,
-  ContactSectionContainer,
-  ContactSectionTitle,
-  ContactButton,
+  StyledFormWrapper,
+  StyledForm,
+  StyledInput,
+  StyledTextArea,
+  StyledError,
+  StyledButton,
 } from './ContactElements';
 
 const ContactSection = () => {
@@ -27,7 +30,35 @@ const ContactSection = () => {
 
   return (
     <ContactSectionBackground>
-      <ContactSectionTitle>Contact me:</ContactSectionTitle>
+      <StyledFormWrapper>
+        <StyledForm>
+          <h2>Contact me:</h2>
+          <label htmlFor='name'>Name</label>
+          <StyledInput type='text' name='name' />
+          <label htmlFor='email'>Your Email</label>
+          <StyledInput type='email' name='email' />
+          <label htmlFor='subject'>Subject</label>
+          <StyledInput type='subject' name='subject' />
+          <label htmlFor='message'></label>
+          <StyledTextArea name='subject' />
+          <StyledError>
+            <p>Error message here</p>
+          </StyledError>
+          <StyledButton type='submit'>Send Message</StyledButton>
+        </StyledForm>
+      </StyledFormWrapper>
+    </ContactSectionBackground>
+  );
+};
+
+export default ContactSection;
+
+// ContactSectionContainer,
+// ContactSectionTitle,
+// ContactButton,
+
+{
+  /* <ContactSectionTitle>Contact me:</ContactSectionTitle>
       <form onSubmit={sendEmail}>
         <ContactSectionContainer>
           <div className='col-8 form-group mx auto'>
@@ -75,9 +106,5 @@ const ContactSection = () => {
             />
           </div>
         </ContactSectionContainer>
-      </form>
-    </ContactSectionBackground>
-  );
-};
-
-export default ContactSection;
+      </form> */
+}
