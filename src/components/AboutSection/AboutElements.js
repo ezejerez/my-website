@@ -75,18 +75,3 @@ export const AboutSectionP2 = styled.p`
     font-size: 16px;
   }
 `;
-export const AboutSectionP3 = styled.p`
-  margin-top: 24px;
-  color: #fff;
-  font-size: 24px;
-  text-align: left;
-  max-width: 600px;
-
-  @media screen and (max-width: 768px) {
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 480px) {
-    font-size: 16px;
-  }
-`;
