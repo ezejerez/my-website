@@ -15,7 +15,7 @@ import Shadow from '../Shadow';
 
 const ContactSection = () => {
   const [error, setError] = useState('');
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const modalRef = useRef();
 
@@ -39,7 +39,7 @@ const ContactSection = () => {
         setShowModal(false);
       }
     },
-    [setShowModal, showModal],
+    [setShowModal, showModal]
   );
 
   useEffect(() => {
@@ -49,13 +49,15 @@ const ContactSection = () => {
 
   function sendEmail(e) {
     e.preventDefault();
+    setShowModal(true);
+    console.log('a');
     return;
     emailjs
       .sendForm(
         'gmail',
         'template_wotpibf',
         e.target,
-        'user_8o9zQhhFpdSCF4aIT7OSF',
+        'user_8o9zQhhFpdSCF4aIT7OSF'
       )
       .then(() => {
         setShowModal(true);
@@ -112,7 +114,8 @@ const ContactSection = () => {
             <ContactButton
               type='submit'
               className='btn btn-info'
-              value='Send Message'>
+              value='Send Message'
+            >
               Send Message
             </ContactButton>
           </ContactForm>

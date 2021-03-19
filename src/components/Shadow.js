@@ -5,9 +5,12 @@ const Shadow = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
-  disply: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 999;
 `;
 
 export default Shadow;
