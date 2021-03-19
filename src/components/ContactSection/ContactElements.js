@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
 export const ContactSectionBackground = styled.div`
-  // background: #0c0c0c;
-  background: green;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(1, 38, 38, 1) 25%,
+    rgba(0, 33, 33, 1) 50%,
+    rgba(1, 38, 38, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +17,7 @@ export const ContactSectionBackground = styled.div`
   z-index: 1;
 `;
 
-export const StyledFormWrapper = styled.div`
+export const ContactFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,47 +26,64 @@ export const StyledFormWrapper = styled.div`
   padding: 0 20px;
 `;
 
-export const StyledForm = styled.form`
+export const ContactForm = styled.form`
   width: 100%;
   max-width: 700px;
   padding: 40px;
-  background: #fff;
+  background: #0c0c0c;
   border-radius: 10px;
+  border: 1px solid #eee;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 
-export const StyledInput = styled.input`
+export const ContactH2 = styled.h2`
+  color: #eee;
+  margin-bottom: 40px;
+`;
+
+export const ContactInput = styled.input`
   display: block;
   width: 100%;
-
-  background: #eee;
+  color: white;
+  background: #3e3636;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: none;
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  outline: none;
+
+  ::placeholder {
+    color: #eee;
+  }
 `;
 
-export const StyledTextArea = styled.textarea`
+export const ContactTextArea = styled.textarea`
   width: 100%;
   min-height: 100px;
   resize: none;
 
-  background: #eee;
+  background: #3e3636;
+  color: white;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: none;
   margin: 10px 0 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  outline: none;
+
+  ::placeholder {
+    color: #eee;
+  }
 `;
 
-export const StyledButton = styled.button`
+export const ContactButton = styled.button`
   display: block;
-  background: #f7797d;
-  color: #fff;
+  background: #eee;
+  color: #000;
   font-size: 0.9rem;
   border: 0;
   border-radius: 5px;
@@ -67,10 +91,11 @@ export const StyledButton = styled.button`
   padding: 0 20px;
   cursor: pointer;
   box-sizing: border-box;
-`;
+  outline: none;
+  
 
-export const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
+ &: hover {
+    background: #01bf71;
+    color: white;
+    transition: 0.2s ease-in-out;
 `;

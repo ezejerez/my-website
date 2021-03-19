@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutSectionContainer = styled.div`
-  // background: #0c0c0c;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(1, 38, 38, 1) 25%,
-    rgba(0, 33, 33, 1) 50%,
-    rgba(1, 38, 38, 1) 75%,
-    rgba(0, 0, 0, 1) 100%
-  );
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
