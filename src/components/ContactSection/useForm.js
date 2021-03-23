@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+const defaultValues = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
 
 const useForm = (validateInfo) => {
-  const [values, setValues] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [values, setValues] = useState(defaultValues);
 
-  const [errors, setErrors] = useState({});
+  const [validationResponse, setValidationResponse] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,10 +22,14 @@ const useForm = (validateInfo) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(validateInfo(values));
+    setValidationResponse(validateInfo(values));
   };
 
-  return { handleChange, values, handleSubmit, errors };
+  const clearForm = () => {
+    setValues(defaultValues);
+  };
+
+  return { handleChange, values, handleSubmit, validationResponse, clearForm };
 };
 
 export default useForm;

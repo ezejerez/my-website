@@ -17,9 +17,13 @@ import useForm from './useForm';
 import validateInfo from './validateInfo';
 
 const ContactSection = () => {
-  const { handleChange, values, handleSubmit, validationResponse } = useForm(
-    validateInfo,
-  );
+  const {
+    handleChange,
+    values,
+    handleSubmit,
+    validationResponse,
+    clearForm,
+  } = useForm(validateInfo);
 
   const [showModal, setShowModal] = useState(true);
 
@@ -45,7 +49,7 @@ const ContactSection = () => {
         setShowModal(false);
       }
     },
-    [setShowModal, showModal],
+    [setShowModal, showModal]
   );
 
   useEffect(() => {
@@ -53,22 +57,25 @@ const ContactSection = () => {
     return () => document.removeEventListener('keydown', keyPress);
   }, [keyPress]);
 
-  function sendEmail(e) {
-    e.preventDefault();
+  useEffect(() => {
     if (validationResponse.success) {
-      setShowModal(true);
+      sendEmail();
     }
-    return;
+  }, [validationResponse]);
+
+  function sendEmail() {
+    const contactForm = document.getElementById('contactForm');
     emailjs
       .sendForm(
         'gmail',
         'template_wotpibf',
-        e.target,
-        'user_8o9zQhhFpdSCF4aIT7OSF',
+        contactForm,
+        'user_8o9zQhhFpdSCF4aIT7OSF'
       )
       .then(() => {
         setShowModal(true);
-      }, e.target.reset());
+        clearForm();
+      });
   }
 
   return (
@@ -86,7 +93,7 @@ const ContactSection = () => {
       ) : null}
       <ContactSectionBackground>
         <ContactFormWrapper>
-          <ContactForm onSubmit={(sendEmail, handleSubmit)}>
+          <ContactForm onSubmit={handleSubmit} id='contactForm'>
             <ContactH2>Contact me:</ContactH2>
             <label htmlFor='name'></label>
             <ContactInput
@@ -141,7 +148,8 @@ const ContactSection = () => {
             <ContactButton
               type='submit'
               className='btn btn-info'
-              value='Send Message'>
+              value='Send Message'
+            >
               Send Message
             </ContactButton>
           </ContactForm>
