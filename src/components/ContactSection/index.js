@@ -9,12 +9,18 @@ import {
   ContactInput,
   ContactTextArea,
   ContactButton,
+  ErrorMessage,
 } from './ContactElements';
 import Modal from '../Modal/index';
 import Shadow from '../Shadow';
+import useForm from './useForm';
+import validateInfo from './validateInfo';
 
 const ContactSection = () => {
-  const [error, setError] = useState('');
+  const { handleChange, values, handleSubmit, validationResponse } = useForm(
+    validateInfo,
+  );
+
   const [showModal, setShowModal] = useState(true);
 
   const modalRef = useRef();
@@ -39,7 +45,7 @@ const ContactSection = () => {
         setShowModal(false);
       }
     },
-    [setShowModal, showModal]
+    [setShowModal, showModal],
   );
 
   useEffect(() => {
@@ -49,15 +55,16 @@ const ContactSection = () => {
 
   function sendEmail(e) {
     e.preventDefault();
-    setShowModal(true);
-    console.log('a');
+    if (validationResponse.success) {
+      setShowModal(true);
+    }
     return;
     emailjs
       .sendForm(
         'gmail',
         'template_wotpibf',
         e.target,
-        'user_8o9zQhhFpdSCF4aIT7OSF'
+        'user_8o9zQhhFpdSCF4aIT7OSF',
       )
       .then(() => {
         setShowModal(true);
@@ -70,7 +77,7 @@ const ContactSection = () => {
         <Shadow ref={modalRef} onClick={closeModal}>
           <animated.div style={animation}>
             <Modal
-              onCloseButtonClick={() => setShowModal(false)}
+              setShowModal={setShowModal}
               message='Your message was sent successfully! I will contact you as soon as
         possible &#x1F60E;'
             />
@@ -79,7 +86,7 @@ const ContactSection = () => {
       ) : null}
       <ContactSectionBackground>
         <ContactFormWrapper>
-          <ContactForm onSubmit={sendEmail}>
+          <ContactForm onSubmit={(sendEmail, handleSubmit)}>
             <ContactH2>Contact me:</ContactH2>
             <label htmlFor='name'></label>
             <ContactInput
@@ -87,21 +94,36 @@ const ContactSection = () => {
               className='form-control'
               placeholder='Your name'
               name='name'
+              value={values.name}
+              onChange={handleChange}
             />
+            {validationResponse.name && (
+              <ErrorMessage>{validationResponse.name}</ErrorMessage>
+            )}
             <label htmlFor='email'></label>
             <ContactInput
               type='text'
               className='form-control'
               placeholder='Your email address'
               name='email'
+              value={values.email}
+              onChange={handleChange}
             />
+            {validationResponse.email && (
+              <ErrorMessage>{validationResponse.email}</ErrorMessage>
+            )}
             <label htmlFor='subject'></label>
             <ContactInput
               type='text'
               className='form-control'
               placeholder='Subject'
               name='subject'
+              value={values.subject}
+              onChange={handleChange}
             />
+            {validationResponse.subject && (
+              <ErrorMessage>{validationResponse.subject}</ErrorMessage>
+            )}
             <label htmlFor='message'></label>
             <ContactTextArea
               className='form-control'
@@ -110,12 +132,16 @@ const ContactSection = () => {
               rows='8'
               placeholder='Your message'
               name='message'
+              value={values.message}
+              onChange={handleChange}
             />
+            {validationResponse.message && (
+              <ErrorMessage>{validationResponse.message}</ErrorMessage>
+            )}
             <ContactButton
               type='submit'
               className='btn btn-info'
-              value='Send Message'
-            >
+              value='Send Message'>
               Send Message
             </ContactButton>
           </ContactForm>

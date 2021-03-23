@@ -92,10 +92,19 @@ export const ContactButton = styled.button`
   cursor: pointer;
   box-sizing: border-box;
   outline: none;
-  
 
+  @media screen and (max-width: 768px){
+    background: #01bf71;
+    color: white;
+  }
+  
  &: hover {
     background: #01bf71;
     color: white;
     transition: 0.2s ease-in-out;
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 0.8rem;
 `;

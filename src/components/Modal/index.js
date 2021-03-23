@@ -7,10 +7,7 @@ const Modal = ({ message, setShowModal }) => {
       <ModalContent>
         <p>{message}</p>
       </ModalContent>
-      <CloseModalButton
-        aria-label='Close modal'
-        onClick={() => setShowModal((prev) => !prev)}
-      />
+      <CloseModalButton onClick={() => setShowModal((prev) => !prev)} />
     </ModalWrapper>
   );
 };
