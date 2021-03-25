@@ -25,7 +25,7 @@ const ContactSection = () => {
     clearForm,
   } = useForm(validateInfo);
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const modalRef = useRef();
 

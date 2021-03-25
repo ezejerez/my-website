@@ -13,7 +13,9 @@ export const ContactSectionBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 937px;
+  height: 100vh;
+  width: 100%;
+
   z-index: 1;
 `;
 
@@ -50,7 +52,7 @@ export const ContactInput = styled.input`
   height: 40px;
   border-radius: 5px;
   border: none;
-  margin: 10px 0 20px 0;
+  margin-top: 15px;
   padding: 20px;
   box-sizing: border-box;
   outline: none;
@@ -64,13 +66,12 @@ export const ContactTextArea = styled.textarea`
   width: 100%;
   min-height: 100px;
   resize: none;
-
   background: #3e3636;
   color: white;
   height: 40px;
   border-radius: 5px;
   border: none;
-  margin: 10px 0 20px 0;
+  margin-top: 15px;
   padding: 20px;
   box-sizing: border-box;
   outline: none;
@@ -92,6 +93,7 @@ export const ContactButton = styled.button`
   cursor: pointer;
   box-sizing: border-box;
   outline: none;
+  margin-top: 15px;
 
   @media screen and (max-width: 768px){
     background: #01bf71;
@@ -105,6 +107,8 @@ export const ContactButton = styled.button`
 `;
 
 export const ErrorMessage = styled.p`
+  position: relative;
   color: red;
   font-size: 0.8rem;
+  margin-top: 2px;
 `;
