@@ -7,6 +7,7 @@ export const FirstSectionContainer = styled.div`
   padding: 0 30px;
   height: 100vh;
   width: 100%;
+
   position: relative;
   z-index: 1;
 
