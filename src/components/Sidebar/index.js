@@ -16,6 +16,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
       <Icon onClick={onToggle}>
         <CloseIcon />
       </Icon>
+
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to='about' onClick={onToggle}>
@@ -28,11 +29,12 @@ const Sidebar = ({ isOpen, onToggle }) => {
             href='https://docs.google.com/document/d/1ra2k-wOx_JPcdLVE1-xdGhsCQGni4p7zbTwjjW5l1NM/edit?usp=sharing'
             target='_blank'
             rel='noreferrer'
-            onClick={onToggle}>
+            onClick={onToggle}
+          >
             Resume
           </SidebarResume>
         </SidebarMenu>
-        {window.innerWidth < 768 ? <SocialFollow /> : null}
+        <SocialFollow />
       </SidebarWrapper>
     </SidebarContainer>
   );
