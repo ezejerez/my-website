@@ -5,7 +5,8 @@ export const FirstSectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 937px;
+  height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 1;
 
@@ -33,14 +34,12 @@ export const FirstSectionBg = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
 `;
 
 export const VideoBg = styled.video`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -o-object-fit: cover;
   object-fit: cover;
   background: #232a34;
