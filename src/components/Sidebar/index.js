@@ -8,6 +8,7 @@ import {
   SidebarLink,
   SidebarResume,
 } from './SidebarElements';
+import SocialFollow from '../SocialFollow/index';
 
 const Sidebar = ({ isOpen, onToggle }) => {
   return (
@@ -31,6 +32,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
             Resume
           </SidebarResume>
         </SidebarMenu>
+        {window.innerWidth < 768 ? <SocialFollow /> : null}
       </SidebarWrapper>
     </SidebarContainer>
   );

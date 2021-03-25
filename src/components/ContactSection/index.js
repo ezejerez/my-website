@@ -49,7 +49,7 @@ const ContactSection = () => {
         setShowModal(false);
       }
     },
-    [setShowModal, showModal]
+    [setShowModal, showModal],
   );
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const ContactSection = () => {
         'gmail',
         'template_wotpibf',
         contactForm,
-        'user_8o9zQhhFpdSCF4aIT7OSF'
+        'user_8o9zQhhFpdSCF4aIT7OSF',
       )
       .then(() => {
         setShowModal(true);
@@ -148,8 +148,7 @@ const ContactSection = () => {
             <ContactButton
               type='submit'
               className='btn btn-info'
-              value='Send Message'
-            >
+              value='Send Message'>
               Send Message
             </ContactButton>
           </ContactForm>
