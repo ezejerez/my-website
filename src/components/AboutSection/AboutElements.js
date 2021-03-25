@@ -6,7 +6,7 @@ export const AboutSectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 937px;
+  height: 100vh;
   width: 100%;
   position: relative;
   z-index: 1;

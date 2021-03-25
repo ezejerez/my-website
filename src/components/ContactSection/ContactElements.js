@@ -13,7 +13,7 @@ export const ContactSectionBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 937px;
+  height: 100vh;
   z-index: 1;
 `;
 
