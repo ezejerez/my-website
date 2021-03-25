@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FirstSectionContainer = styled.div`
-  background: #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +43,7 @@ export const VideoBg = styled.video`
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  background: 232a34;
+  background: #232a34;
 `;
 
 export const FirstSectionContent = styled.div`
@@ -78,7 +77,6 @@ export const FirstSectionH1 = styled.h1`
   color: #fff;
   font-size: 68px;
   text-align: center;
-  font-family: ;
 
   @media screen and (max-width: 768px) {
     font-size: 60px;

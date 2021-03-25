@@ -5,6 +5,7 @@ import {
   AboutSectionTitle,
   AboutSectionP1,
   AboutSectionP2,
+  AboutSectionList,
 } from './AboutElements';
 
 const AboutSection = () => {
@@ -19,8 +20,22 @@ const AboutSection = () => {
           </AboutSectionP1>
           <AboutSectionP2>
             I enjoy learning new stuff and I have 2 years of experience using
-            tecnologies as: HTML, CSS, JavaScript and React JS.
+            tecnologies as:
           </AboutSectionP2>
+          <AboutSectionList>
+            <div>
+              <ul>
+                <li>React JS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+          </AboutSectionList>
         </AboutSectionContent>
       </AboutSectionContainer>
     </div>

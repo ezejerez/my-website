@@ -12,6 +12,7 @@ import {
   NavLinks,
   NavResume,
 } from './NavbarElements';
+import Logo from '../../images/Logo.svg';
 
 const Navbar = ({ onToggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
@@ -37,7 +38,7 @@ const Navbar = ({ onToggle }) => {
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo onClick={toggleHome}>ej</NavLogo>
+            <NavLogo onClick={toggleHome} src={Logo} alt='Logo' />
             <MobileIcon onClick={onToggle}>
               <FaBars />
             </MobileIcon>
