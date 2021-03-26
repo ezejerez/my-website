@@ -6,7 +6,7 @@ export const AboutSectionContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 937px;
+  height: 100vh;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -106,13 +106,12 @@ export const AboutSectionList = styled.div`
   color: #01bf71;
   align-items: center;
   font-size: 24px;
-  text-align: center;
+  text-align: left;
   display: flex;
   justify-content: space-between;
 
   > div li {
     list-style-type: disclosure-closed;
-    // list-style-type: '▶ ';
   }
 
   @media screen and (max-width: 768px) {

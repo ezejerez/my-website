@@ -14,7 +14,7 @@ import {
 } from './NavbarElements';
 import Logo from '../../images/Logo.svg';
 
-const Navbar = ({ onToggle }) => {
+const Navbar = ({ onToggle, windowSize }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const toggleHome = () => {
@@ -39,9 +39,13 @@ const Navbar = ({ onToggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo onClick={toggleHome} src={Logo} alt='Logo' />
-            <MobileIcon onClick={onToggle}>
-              <FaBars />
-            </MobileIcon>
+
+            {windowSize.width < 768 ? (
+              <MobileIcon onClick={onToggle}>
+                <FaBars />
+              </MobileIcon>
+            ) : null}
+
             <NavMenu>
               <NavItem>
                 <NavLinks
@@ -50,7 +54,8 @@ const Navbar = ({ onToggle }) => {
                   duration={500}
                   spy={true}
                   exact='true'
-                  offset={-80}>
+                  offset={-80}
+                >
                   About
                 </NavLinks>
               </NavItem>
@@ -61,7 +66,8 @@ const Navbar = ({ onToggle }) => {
                   duration={500}
                   spy={true}
                   exact='true'
-                  offset={-80}>
+                  offset={-80}
+                >
                   Contact
                 </NavLinks>
               </NavItem>
@@ -69,7 +75,8 @@ const Navbar = ({ onToggle }) => {
                 <NavResume
                   href='https://docs.google.com/document/d/1ra2k-wOx_JPcdLVE1-xdGhsCQGni4p7zbTwjjW5l1NM/edit?usp=sharing'
                   target='_blank'
-                  rel='noreferrer'>
+                  rel='noreferrer'
+                >
                   Resume
                 </NavResume>
               </NavItem>

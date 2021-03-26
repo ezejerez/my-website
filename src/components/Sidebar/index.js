@@ -16,6 +16,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
       <Icon onClick={onToggle}>
         <CloseIcon />
       </Icon>
+
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to='about' onClick={onToggle}>
@@ -32,7 +33,7 @@ const Sidebar = ({ isOpen, onToggle }) => {
             Resume
           </SidebarResume>
         </SidebarMenu>
-        {window.innerWidth < 768 ? <SocialFollow /> : null}
+        <SocialFollow />
       </SidebarWrapper>
     </SidebarContainer>
   );

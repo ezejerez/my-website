@@ -25,7 +25,7 @@ const ContactSection = () => {
     clearForm,
   } = useForm(validateInfo);
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const modalRef = useRef();
 
@@ -57,26 +57,30 @@ const ContactSection = () => {
     return () => document.removeEventListener('keydown', keyPress);
   }, [keyPress]);
 
-  useEffect(() => {
-    if (validationResponse.success) {
-      sendEmail();
-    }
-  }, [validationResponse]);
+  useEffect(
+    () => {
+      function sendEmail() {
+        const contactForm = document.getElementById('contactForm');
+        emailjs
+          .sendForm(
+            'gmail',
+            'template_wotpibf',
+            contactForm,
+            'user_8o9zQhhFpdSCF4aIT7OSF',
+          )
+          .then(() => {
+            setShowModal(true);
+            clearForm();
+          });
+      }
 
-  function sendEmail() {
-    const contactForm = document.getElementById('contactForm');
-    emailjs
-      .sendForm(
-        'gmail',
-        'template_wotpibf',
-        contactForm,
-        'user_8o9zQhhFpdSCF4aIT7OSF',
-      )
-      .then(() => {
-        setShowModal(true);
-        clearForm();
-      });
-  }
+      if (validationResponse.success) {
+        sendEmail();
+      }
+    },
+    // eslint-disable-next-line
+    [validationResponse],
+  );
 
   return (
     <div id='contact'>
