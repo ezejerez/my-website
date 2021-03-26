@@ -1,6 +1,6 @@
 # React Personal Website (portfolio)
 
-My personal website developed using React and Styled Components
+My personal website developed using React, Styled-Components and Email.js
 
 
 ---
